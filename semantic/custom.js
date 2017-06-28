@@ -313,7 +313,8 @@ var detail = function (){
     return function (spec){
         var tag = spec.tag;
         return "\
-<div class=\"event\">\
+        <!--<div class=\"ui hidden divider\" name=\"{10}\"></div>-->\
+<div class=\"event\" id=\"{10}\">\
                   <div class=\"label\">\
                     <i class=\"{0} icon\"></i>\
                   </div>\
@@ -373,7 +374,8 @@ spec.tag,
 spec.sent[0] == "-"?"frown":"smile",
 getSubIcon(spec.sent),
 getTags(spec),
-spec.transcript);
+spec.transcript,
+spec.from);
 
     };
 }();
@@ -478,6 +480,9 @@ getSubIcon(obj.clip.stats.sentiment))));
 $('.ui.accordion')
   .accordion()
 ;
+
+// toggle accordion when step is clicked
+$(".step.active").click(function(){var $this = $(this); var id = $this.attr("href").slice(1); console.log(id); $($(document.getElementById("{0}".format(id))).find(".accordion")[0]).accordion("open", 0);});
 
 // overall summary
 $("#o-summary").append($("<blockquote>").text(obj.clip.summary));
