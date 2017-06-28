@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+        <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="semantic/custom.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+
+          <script src="semantic/wordcloud/lib/d3/d3.js"></script>
+    <script src="semantic/wordcloud/lib/d3/d3.layout.cloud.js"></script>
+    <script src="semantic/wordcloud/d3.wordcloud.js"></script>
+
+        <script src="semantic/semantic.min.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script src="semantic/custom.js"></script>
+
+
+
+    </head>
+
+
+
+<body class="template">
+    <div class="ui inverted huge borderless fixed fluid menu">
+      <a class="header item">Project name</a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui small input">
+            <input placeholder="Search...">
+          </div>
+        </div>
+        <a class="item">Dashboard</a><a class="item">Settings</a><a class="item">Profile</a><a class="item">Help</a>
+      </div>
+    </div>
+    <div class="ui grid">
+      <div class="row">
+        <div class="column" id="sidebar">
+          <div class="ui secondary vertical fluid menu">
+            <a class="active item">Overview</a><a class="item">Reports</a><a class="item">Analytics</a><a class="item">Export</a>
+            <div class="ui hidden divider"></div>
+            <a class="item">Nav item</a><a class="item">Nav item again</a><a class="item">One more nav</a><a class="item">Another nav item</a><a class="item">More navigation</a>
+            <div class="ui hidden divider"></div>
+            <a class="item">Macintosh</a><a class="item">Linux</a><a class="item">Windows</a>
+          </div>
+        </div>
+        <div class="column" id="content">
+          <div class="ui grid">
+            <div class="row">
+              <h1 class="ui huge header">
+                Dashboard
+              </h1>
+            </div>
+
+            <div class="ui divider"></div>
+
+
+
+
+            <div class="row">
+
+                <div class="ui inverted segment statistics-cont">
+
+                  <div class="ui red inverted statistic">
+                    <div class="duration value">
+                      4.3M
+                    </div>
+                    <div class="label">
+                      duration
+                    </div>
+                  </div>
+                  <div class="ui orange inverted statistic">
+                    <div class="speak2listen value">
+                      62%
+                    </div>
+                    <div class="label">
+                      speak2listen
+                    </div>
+                  </div>
+                  <div class="ui yellow inverted statistic">
+                    <div class="avg-speech value">
+                      28
+                    </div>
+                    <div class="label">
+                      avg-Speech
+                    </div>
+                  </div>
+                  <div class="ui olive inverted statistic">
+                    <div class="words value">
+                      60
+                    </div>
+                    <div class="label">
+                      #words
+                    </div>
+                  </div>
+                  <div class="ui red inverted statistic">
+                  <div class="sentiment value">
+                      ++
+                    </div>
+                    <div class="label">
+                      sentiment
+                    </div>
+                  </div>
+                  <div class="ui orange inverted statistic">
+                    <div class="interruptions value">
+                      5
+                    </div>
+                    <div class="label">
+                      interrupts
+                    </div>
+                  </div>
+                  <div class="ui yellow inverted statistic">
+                    <div class="qask value">
+                      28
+                    </div>
+                    <div class="label">
+                      questions
+                    </div>
+                  </div>
+                  <div class="ui olive inverted statistic">
+                    <div class="pricing-talk value">
+                      6
+                    </div>
+                    <div class="label">
+                      pricing
+                    </div>
+                  </div>
+
+                  <div class="ui red inverted statistic">
+                  <div class="compete value">
+                      7
+                    </div>
+                    <div class="label">
+                      competition
+                    </div>
+                  </div>
+                  <div class="ui orange inverted statistic">
+                    <div class="timeline value">
+                      5
+                    </div>
+                    <div class="label">
+                      timeline
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row">
+
+            <div class="ui attached info message">
+              <i class="close icon"></i>
+              <div class="header">
+                How to use this?
+              </div>
+              <ul class="list">
+                <li>Hover over the clip subsections for a brief overview. Clicking on an individual section will take you to it's details panel.</li>
+                <li>The panel lists the Sentiment Measure, Concepts like: Named Entities, Topics and Semantic Triplets and Key Performace/Interest Indicators (KPIs) like: Questions asked(Q/A), Pricing Dicussed, Sales Pipeline Category, Competitors discussed, Dates/Timelines refered.
+                <!-- <ul class="list">
+                    <li></li>
+
+                    <li>
+
+                        <ul class="list">
+                        <li> </li>
+                        <li></li>
+                        <li> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="list">
+                        <li></li>
+                        <li> </li>
+                        <li> </li>
+                        <li> </li>
+                        <li> </li>
+                        </ul>
+                    </li>
+                </ul> -->
+                </li>
+              </ul>
+            </div>
+
+
+                <div class="ui attached segment clip">
+                    <a class="ui ribbon label"><i class="comments icon"></i> Clip</a>
+
+                    <div class="ui fluid steps">
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="ui two column stackable grid">
+                  <div class="ten wide column wcloud">
+                    <div id='wordcloud'></div>
+                  </div>
+                  <div class="five wide column">
+                    <p id="o-summary"> </p>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+
+
+
+          <!-- Feed starts -->
+        <div class="ui two column stackable grid">
+          <!-- feed main starts -->
+          <div class="ten wide column feed-cont">
+            <div class="ui feed conv">
+
+
+
+
+            </div>
+
+          </div>
+          <!-- feed main ends -->
+          <!-- chart sidebar right starts -->
+          <div class="six wide column container">
+            <div class="ui segments">
+                <div class="ui segment">
+                <div id="container-pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+                  </div>
+                  <div class="ui red segment">
+                    <div id="pie-topic" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+                  </div>
+                  <div class="ui red segment">
+                    <div id="container" style="width:100%; height:400px;"></div>
+
+                  </div>
+            </div>
+
+            <div class="ui hidden divider"></div>
+
+          </div>
+          <!-- chart sidebar right ends -->
+        </div>
+        <!-- Feed ends -->
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+      body {
+        display: relative;
+      }
+
+      #sidebar {
+        position: fixed;
+        top: 51.8px;
+        left: 0;
+        bottom: 0;
+        width: 18%;
+        background-color: #f5f5f5;
+        padding: 0px;
+      }
+      #sidebar .ui.menu {
+        margin: 2em 0 0;
+        font-size: 16px;
+      }
+      #sidebar .ui.menu > a.item {
+        color: #337ab7;
+        border-radius: 0 !important;
+      }
+      #sidebar .ui.menu > a.item.active {
+        background-color: #337ab7;
+        color: white;
+        border: none !important;
+      }
+      #sidebar .ui.menu > a.item:hover {
+        background-color: #4f93ce;
+        color: white;
+      }
+
+      #content {
+        margin-left: 19%;
+        width: 81%;
+        margin-top: 3em;
+        padding-left: 3em;
+        float: left;
+      }
+      #content > .ui.grid {
+        padding-right: 4em;
+        padding-bottom: 3em;
+      }
+      #content h1 {
+        font-size: 36px;
+      }
+      #content .ui.divider:not(.hidden) {
+        margin: 0;
+      }
+      #content table.ui.table {
+        border: none;
+      }
+      #content table.ui.table thead th {
+        border-bottom: 2px solid #eee !important;
+      }
+    </style>
+
+  <footer>
+    <!-- <script src="/static/javascripts/ga.js"></script>
+    <script src="/static/javascripts/growingio.js"></script> -->
+
+    <script>
+
+    </script>
+  </footer>
+</body>
+
+
+</html>
+
