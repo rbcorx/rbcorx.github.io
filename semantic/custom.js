@@ -145,7 +145,7 @@ var dura = obj.clip.stats.duration;
 for (var i=0; i<mutate_count; i++){
     var sale = getSegObj("type");
 
-    var span = Math.random()*5 + 1;
+    var span = Math.random()*5 + 2;
     sale.from = pls.to;
     sale.to = sale.from + span;
     sale.tag = obj.clip.keywords[0][Math.round(Math.random()*110)];
@@ -153,7 +153,7 @@ for (var i=0; i<mutate_count; i++){
 
     var client = getSegObj("client");
 
-    span = Math.random()*5 + 1;
+    span = Math.random()*5 + 2;
     client.from = sale.to;
     client.to = client.from + span;
     client.tag = obj.clip.keywords[0][Math.round(Math.random()*110)];
