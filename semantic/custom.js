@@ -8,7 +8,7 @@ obj = {
                     "sentscore": 0.8,
                     "speaker": "Salesman",
                     "tag": "product",
-                    "summ": "salesman speech summary...",
+                    "summ": "Specializing in traveler path-to-purchase data for over a decade...",
                     "concepts": [
                         // named entities
                         {"value": "Sojern", "type": "Entity", "verbose": "Organization"},
@@ -25,7 +25,7 @@ obj = {
                         {"value": 2, "type": "Q/A"},
                         {"value": 1, "type": "Competitor"},
                     ],
-                    "transcript": "full salesman transcript...",
+                    "transcript": "Specializing in traveler path-to-purchase data for over a decade, Sojern is travel’s direct demand engine for thousands of brands—from global enterprises to boutique operators—across the hotel, airline, cruise, transportation, tourism industries and more.",
 
                 },
                 {
@@ -35,8 +35,8 @@ obj = {
                     "sentscore": 0.1,
                     "speaker": "Client",
                     "tag": "sojern",
-                    "summ": "client speech summary...",
-                    "transcript": "full client transcript...",
+                    "summ": "there's no obligation and so was wondering if I can go ahead...",
+                    "transcript": "and it's completely free there's no obligation and so was wondering if I can go ahead and set you up with that",
                     "concepts": [
                         // named entities
                         {"value": "Sojern", "type": "Entity", "verbose": "Organization"},
@@ -95,8 +95,8 @@ function getSegObj(type){
                     "sentscore": 0.7,
                     "speaker": "Client",
                     "tag": "sojern",
-                    "summ": "client speech summary...",
-                    "transcript": "full client transcript...",
+                    "summ": "there's no obligation and so was wondering if I can go ahead...",
+                    "transcript": "and it's completely free there's no obligation and so was wondering if I can go ahead and set you up with that",
                     "concepts": [
                         // named entities
                         {"value": "Sojern", "type": "Entity", "verbose": "Organization"},
@@ -121,7 +121,7 @@ function getSegObj(type){
                     "sentscore": 0.63,
                     "speaker": "Salesman",
                     "tag": "product",
-                    "summ": "salesman speech summary...",
+                    "summ": "Specializing in traveler path-to-purchase data for over a decade...",
                     "concepts": [
                         // named entities
                         {"value": "Sojern", "type": "Entity", "verbose": "Organization"},
@@ -138,7 +138,7 @@ function getSegObj(type){
                         {"value": 2, "type": "Q/A"},
                         {"value": 1, "type": "Competitor"},
                     ],
-                    "transcript": "full salesman transcript...",
+                    "transcript": "Specializing in traveler path-to-purchase data for over a decade, Sojern is travel’s direct demand engine for thousands of brands—from global enterprises to boutique operators—across the hotel, airline, cruise, transportation, tourism industries and more.",
 
                 };
 }
