@@ -19,6 +19,7 @@
 .pointing {
         position: absolute !important;
         bottom: -35px;
+        padding-right: 15px !important;
 
 }
 .pointing.below{
@@ -30,6 +31,11 @@
     left: 6px;
     bottom: 4px;
     margin: 0 !important;
+    position: absolute !important;
+    right: -65% !important;
+    /*right: 0px !important;
+    float: right !important;*/
+    top: 2px !important;
 }
 .angle.up, .smile {
     color: #21ba45 !important;
