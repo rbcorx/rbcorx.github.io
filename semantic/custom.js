@@ -5,6 +5,7 @@ obj = {
                     "from":1.03434,
                     "to":3.44545,
                     "sent": "++",
+                    "sentscore": 0.8,
                     "speaker": "Salesman",
                     "tag": "product",
                     "summ": "salesman speech summary...",
@@ -31,6 +32,7 @@ obj = {
                     "from":4.4545,
                     "to":7.4545,
                     "sent": "--",
+                    "sentscore": 0.1,
                     "speaker": "Client",
                     "tag": "sojern",
                     "summ": "client speech summary...",
@@ -55,7 +57,7 @@ obj = {
 
             ],
         "stats": {
-            "duration": 8,
+            "duration": 10,
             "speak2listen": "63%",
             "avg-speech": "4.3",
             "words": 450,
@@ -90,6 +92,7 @@ function getSegObj(type){
                     "from":3.4545,
                     "to":5.4545,
                     "sent": "--",
+                    "sentscore": 0.7,
                     "speaker": "Client",
                     "tag": "sojern",
                     "summ": "client speech summary...",
@@ -115,6 +118,7 @@ function getSegObj(type){
                     "from":1.03434,
                     "to":1.44545,
                     "sent": "++",
+                    "sentscore": 0.63,
                     "speaker": "Salesman",
                     "tag": "product",
                     "summ": "salesman speech summary...",
@@ -391,14 +395,14 @@ $(document).ready(function(){
 
 var ls = 0;
 var point_ls = "below";
-var add_pause = false;
+var add_pause = true;
 function clip_seg(spec){
     var els = []
     if (spec.from > ls){
         var pause = $("<div class=\"step disabled\">\
                         <div class=\"content\">\
                         <div class=\"floating ui grey label\">{0}</div>\
-                          <div class=\"title\">. . .</div>\
+                          <div class=\"title\">...</div>\
                         </div>\
                       </div>".format(Math.round(spec.from*10)/10));
         pause.width("{0}%".format(((spec.from - ls) * 100 / dur)));
@@ -439,7 +443,6 @@ $feed.detach();
 for (var i=0; i<lim; i++){
 
     var els = clip_seg(segs[i]);
-    console.log(els);
     $cont.append(els[0]);
     if (els.length > 1){
         $cont.append(els[1]);
@@ -629,70 +632,56 @@ $(function () {
     var id = $("#container").data("id");
     function test(data){
 
-            for (var cat in ["activity", "alerts"]){
-                cat = ["activity", "alerts"][cat];
-                for (el in data[cat]){
-                    console.log(cat);
-                    console.log(el);
-                    console.log(data[cat][el]);
-                    console.log(data[cat][el][0]);
-                    var date_el = data[cat][el][0].split('-');
-                    date_el[1] = parseInt(date_el[1]) - 1
-                   data[cat][el][0] = Date.UTC.apply(null, date_el);
-                }
+            // for (var cat in ["activity", "alerts"]){
+            //     cat = ["activity", "alerts"][cat];
+            //     for (el in data[cat]){
+            //         // console.log(cat);
+            //         // console.log(el);
+            //         // console.log(data[cat][el]);
+            //         // console.log(data[cat][el][0]);
+            //         var date_el = data[cat][el][0].split('-');
+            //         date_el[1] = parseInt(date_el[1]) - 1
+            //        data[cat][el][0] = Date.UTC.apply(null, date_el);
+            //     }
+            // }
+
+            var lim = obj.clip.segments.length;
+            var data = [];
+            for (var i=0; i<lim; i++){
+                if (obj.clip.segments[i].speaker == "Client")
+                data.push([obj.clip.segments[i].to, obj.clip.segments[i].sentscore])
             }
 
-            $('#container').highcharts({
-                chart: {
-                    type: 'line'
-                },
-                plotOptions: {
-                    line: {
-                        connectNulls: true
-                    }
-                },
-                xAxis: {
-                    type: 'datetime',
-                    dateTimeLabelFormats: { // don't display the dummy year
-                        month: '%e. %b',
-                        year: '%b'
-                    },
-                    title: {
-                        text: 'Date'
-                    }
-                },
-                yAxis: [{
-                    min: 0,
-                    max: data.upper,
-                    lineWidth: 1,
-                    title: {
-                        text: 'Sentiment'
-                    }
-                }, {
-                    min: 0,
-                    max: data.upper,
-                    lineWidth: 1,
-                    opposite: true,
-                    title: {
-                        text: 'Activity'
-                    }
-                }],
-                title: {
-                    text: 'Sentiment'
-                },
-                rangeSelector:{
-                    enabled:true
-                },
-                series: [{
-                    name: "sentiment",
-                    data: data.alerts
+            Highcharts.chart('container', {
 
-                }, {
-                    name: "activity",
-                    data: data.activity,
-                    yAxis: 1
-                }]
-            }); // end line curve
+    title: {
+        text: 'Sentiment of Client through the duration of call'
+    },
+
+    subtitle: {
+        text: 'ranges from (-1, 1)'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Sentiment Score'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+
+
+    series: [{
+        showInLegend: false,
+        name: 'Sentiment',
+        data: data//[[2.3, 43934], [4.5, 52503], [6.7, 57177], [7.9, 69658], [9.8, 97031], [13, 119931], [17, 137133], [21, 154175]]
+    }]
+
+}); // end line curve
 
             // pie chart
 
@@ -706,7 +695,7 @@ $(function () {
 
         }
         // function ends
-        test({"upper": 2, "ends": "2017-06-28", "starts": "2017-06-28", "alerts": [["2017-06-27", 0], ["2017-06-28", 0]], "activity": [["2017-06-27", 0], ["2017-06-28", 0]], "percent_alerts": 60});
+        test({"upper": 2, "ends": "2017-06-28", "starts": "2017-06-28", "alerts": [["lol", 0], ["lol", 3]], "activity": [["2df7", 0], ["2df", 3]], "percent_alerts": 60});
 
 
 
