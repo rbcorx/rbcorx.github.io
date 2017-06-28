@@ -91,7 +91,7 @@ function getSegObj(type){
     return {
                     "from":3.4545,
                     "to":5.4545,
-                    "sent": "--",
+                    "sent": "+",
                     "sentscore": 0.7,
                     "speaker": "Client",
                     "tag": "sojern",
