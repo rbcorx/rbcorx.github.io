@@ -225,10 +225,10 @@ function getTags(spec){
         return head + body;
     };
     var res = "";
-    var key = "concepts";
+    var key = "KPIs";
     res += compileCat(key, spec);
 
-    key = "KPIs";
+    key = "concepts";
     res += compileCat(key, spec);
 
     return res;
