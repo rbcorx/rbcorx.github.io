@@ -458,8 +458,18 @@ $('.step.active')
 
 // fill overview stats
 for (stat in obj.clip.stats){
+    if (stat != "sentiment")
     $("." + stat).text(obj.clip.stats[stat]);
 }
+
+$sento = $(".sentiment");
+$sento.text("");
+
+$sento.append($("<i class=\"icons\">\
+                                    <i class=\"{0} icon\"></i>\
+                                    {1}\
+                                  </i>".format(obj.clip.stats.sentiment[0] == "-"?"frown":"smile",
+getSubIcon(obj.clip.stats.sentiment))));
 
 // activate dropdowns accordions
 $('.ui.accordion')
