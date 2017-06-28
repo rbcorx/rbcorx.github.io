@@ -328,6 +328,10 @@ var detail = function (){
                       {2}s\
                     </div>\
                     <a class=\"ui {3} tag label\">{5}</a>\
+                    <i class=\"large sscore icons\">\
+                                    <i class=\"{6} icon\"></i>\
+                                    {7}\
+                                  </i>\
                     </div>\
 \
                     <!-- <div class=\"ui divider\"></div> -->\
@@ -347,7 +351,7 @@ var detail = function (){
                               <i class=\"heart icon\"></i>\
                               <div class=\"content\">\
                                 Sentiment\
-                                <i class=\"large icons\">\
+                                <i class=\"large sscore icons\">\
                                     <i class=\"{6} icon\"></i>\
                                     {7}\
                                   </i>\
