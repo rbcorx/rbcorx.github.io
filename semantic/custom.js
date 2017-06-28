@@ -336,7 +336,7 @@ var detail = function (){
 \
                     <!-- <div class=\"ui divider\"></div> -->\
                         <div class=\"ui extra accordion\">\
-                          <div class=\"ui header title\">\
+                          <div class=\"ui grey header title\">\
                             <i class=\"dropdown icon\"></i>\
                             {4}\
                           </div>\
@@ -482,11 +482,24 @@ getSubIcon(obj.clip.stats.sentiment))));
 
 // activate dropdowns accordions
 $('.ui.accordion')
-  .accordion()
+  .accordion({
+    onClose: function () {
+        $(this).parent().children(".blue").removeClass("blue").addClass("grey");
+        //$acc = $('.ui.accordion > .blue').removeClass("blue").addClass("grey");
+    //$acc.children(".blue")
+    }
+})
 ;
 
 // toggle accordion when step is clicked
-$(".step.active").click(function(){var $this = $(this); var id = $this.attr("href").slice(1); console.log(id); $($(document.getElementById("{0}".format(id))).find(".accordion")[0]).accordion("open", 0);});
+$(".step.active").click(function(){
+    var $this = $(this);
+    var id = $this.attr("href").slice(1);
+    $acc = $('.ui.accordion');
+    $acc.accordion('close', 0);
+    $acc.children(".blue").removeClass("blue").addClass("grey");
+    $($(document.getElementById("{0}".format(id))).find(".accordion")[0]).accordion("open", 0).children(".grey").removeClass("grey").addClass("blue");
+});
 
 // overall summary
 $("#o-summary").append($("<blockquote>").text(obj.clip.summary));
