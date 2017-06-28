@@ -1,0 +1,110 @@
+.clip {
+    width: 100%;
+}
+.s0 {
+    width: 10%;
+}
+.s1 {
+    width: 40%;
+}
+
+.s2 {
+    width: 30%;
+}
+
+.s3 {
+    width: 20%;
+}
+
+.pointing {
+        position: absolute !important;
+        bottom: -35px;
+
+}
+.pointing.below{
+    bottom: 51px;
+}
+.pointing > .angle {
+    /*//color: green !important;*/
+    position: relative;
+    left: 6px;
+    bottom: 4px;
+    margin: 0 !important;
+}
+.angle.up, .smile {
+    color: #21ba45 !important;
+}
+.angle.down, .frown {
+    color: #db2828 !important;
+}
+
+.comments {
+    margin: 0 !important;
+}
+
+.sales {
+        /*background-color: rgb(181, 204, 24) !important;
+            color: rgb(255, 255, 255) !important;
+    border-color: rgb(181, 204, 24) !important;*/
+}
+
+.client {
+        /*background-color: rgb(251, 189, 8) !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: rgb(251, 189, 8) !important;*/
+}
+
+.step.disabled {
+    //font-size: 20px !important;
+    font-weight: bolder !important;
+    padding-bottom: 20px !important;
+
+}
+.step > .icon {
+    margin-right: 0px !important;
+    font-size: 1.5em !important;
+}
+.steps {
+        margin-bottom: 30px !important;
+}
+
+.floating.label {
+        font-size: 10px !important;
+    font-weight: 100 !important;
+    padding: 5px !important;
+}
+.accordion > .content {
+    margin-left: 8px;
+}
+
+#content > .ui.grid {
+    padding-bottom: 0px !important;
+}
+
+.wcloud{
+    padding-left: 0px !important;
+    position: relative;
+    right: 5px;
+}
+
+.tag.label {
+    margin-left: 20px !important;
+}
+
+.pipe-cat {
+        margin-left: -5px !important;
+}
+
+/*.statistic {
+    width: 9.6% !important;
+    margin-left: 0px !important;
+}
+.statistics-cont {
+    width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}*/
+
+.label.transition {
+    margin-bottom: 5px !important;
+}
