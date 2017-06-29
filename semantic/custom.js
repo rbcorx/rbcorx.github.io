@@ -401,7 +401,7 @@ $(document).ready(function(){
 
 var ls = 0;
 var point_ls = "below";
-var add_pause = true;
+var add_pause = false;
 function clip_seg(spec){
     var els = []
     if (spec.from > ls){
