@@ -234,55 +234,6 @@ function getTags(spec){
     return res;
 
 
-// "\
-// <h4 class="ui header">
-//                               <i class="idea icon"></i>
-//                               <div class="content">
-//                                 Concepts
-//                               </div>
-//                             </h4>
-
-
-//                             <a class="ui teal image label">
-//                               Veronika rules
-//                               <div class="detail">Topic</div>
-//                             </a>
-//                             <a class="ui violet image label">
-//                               Helen, Rules, Russia
-//                               <div class="detail">Semantic triplet</div>
-//                             </a>
-
-
-//                             <h4 class="ui header">
-//                               <i class="bullseye icon"></i>
-//                               <div class="content">
-//                                 KPIs
-//                               </div>
-//                             </h4>
-
-
-//                             <a class="ui red image label">
-//                               1
-//                               <div class="detail">Timeline</div>
-//                             </a>
-
-//                             <a class="ui orange image label">
-//                               1
-//                               <div class="detail">Pricing</div>
-//                             </a>
-
-//                               <a class="ui pink image label">
-//                               2
-//                               <div class="detail">Q/A</div>
-//                             </a>
-
-
-//                             <a class="ui yellow image label">
-//                               1
-//                               <div class="detail">Competitor</div>
-//                             </a>
-// "
-
 }
 
 
@@ -383,14 +334,6 @@ spec.from);
 
     };
 }();
-
-
-
-
-
-
-// console.log("###############");
-// console.log(detail(obj.clip.segments[0]));
 
 
 
@@ -506,11 +449,13 @@ $("#o-summary").append($("<blockquote>").text(obj.clip.summary));
 
 // adding feed
 
+// sidebar onclick
 
-
-
-
-// $feed.append($(detail(obj.clip.segments[0])));
+$(".menu > .launch").click(function (){
+    $('.ui.sidebar')
+  .sidebar('toggle')
+;
+});
 
 // Highcharts
 
@@ -616,39 +561,6 @@ d3.wordcloud()
 
 //////////////////
 
-
-
-
-/*
-Highcharts.chart('container', {
-    chart: {
-        marginRight: 80 // like left
-    },
-    xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    },
-    yAxis: [{
-        lineWidth: 1,
-        title: {
-            text: 'Primary Axis'
-        }
-    }, {
-        lineWidth: 1,
-        opposite: true,
-        title: {
-            text: 'Secondary Axis'
-        }
-    }],
-
-    series: [{
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-    }, {
-        data: [144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2],
-        yAxis: 1
-    }]
-});
-
-*/
 
 $(function () {
     var id = $("#container").data("id");
