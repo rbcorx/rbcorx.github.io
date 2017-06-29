@@ -111,10 +111,45 @@
     padding-right: 0px !important;
 }*/
 
+.statistics-cont {
+    width: 100% !important;
+    }
+
 .label.transition {
     margin-bottom: 5px !important;
 }
 
 .sscore {
     margin-left: 5px !important;
+}
+
+#wordcloud > svg {
+    width: 100% !important;
+}
+
+#o-summary {
+    max-height: 200px !important;
+    overflow: scroll !important;
+        margin-left: 15px !important;
+}
+
+.pusher {
+    margin-top: 3em !important;
+    margin-left: 0% !important;
+    padding-top: 10px !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    float: left;
+    width: 100% !important;
+}
+
+.menu > .launch {
+    border: 0px;
+    border-right-color: rgba(73, 73, 73, 0.5);
+    border-right-width: 1px;
+    border-style: solid;
+
+}
+.left.demo.vertical {
+        padding-top: 46px;
 }
