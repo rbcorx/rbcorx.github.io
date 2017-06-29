@@ -2,7 +2,6 @@
 <html>
     <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF8">
-        <title> Moonshot DIV-2 250 </title>
         <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="semantic/custom.css">
         <script
@@ -27,21 +26,30 @@
 
 <body class="template">
     <div class="ui inverted huge borderless fixed fluid menu">
+    <a class="launch icon item">
+      <i class="content icon"></i>
+    </a>
       <a class="header item">Moonshot DIV-2 250</a>
       <div class="right menu">
-          
+
         <a class="item">Dashboard</a>
       </div>
     </div>
-    <div class="ui grid">
-      <div class="row">
-        <div class="column" id="sidebar">
-          <div class="ui secondary vertical fluid menu">
+    <!-- <div class="ui secondary sidebar vertical fluid menu">
             <a class="active item">Overview</a>
             <div class="ui hidden divider"></div>
-          </div>
-        </div>
-        <div class="column" id="content">
+          </div> -->
+          <div class="ui left demo vertical inverted sidebar labeled icon menu">
+  <a class="item">
+    <!-- <i class="home icon"></i> -->
+    Overview
+  </a>
+
+</div>
+        <div class="ui pusher grid">
+      <div class="row">
+
+        <div class="column">
           <div class="ui grid">
             <div class="row">
               <h1 class="ui huge header">
@@ -92,7 +100,7 @@
                   </div>
                   <div class="ui red inverted statistic">
                   <div class="sentiment value">
-                      ++
+                      --
                     </div>
                     <div class="label">
                       sentiment
@@ -226,11 +234,11 @@
           <div class="six wide column container">
             <div class="ui segments">
                 <div class="ui segment">
-                <div id="container-pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                <div id="container-pie" style="min-width: 100%; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
                   </div>
                   <div class="ui red segment">
-                    <div id="pie-topic" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <div id="pie-topic" style="min-width: 100%; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
                   </div>
                   <div class="ui red segment">
