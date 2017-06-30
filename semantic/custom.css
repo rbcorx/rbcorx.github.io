@@ -72,6 +72,13 @@
 }
 .steps {
         margin-bottom: 30px !important;
+            overflow: scroll;
+            height: 167px !important;
+            padding-top: 50px !important;
+}
+
+.steps .step.active {
+    height: 53px !important;
 }
 
 .floating.label {
@@ -113,6 +120,7 @@
 
 .statistics-cont {
     width: 100% !important;
+    text-align: center !important;
     }
 
 .label.transition {
@@ -152,4 +160,7 @@
 }
 .left.demo.vertical {
         padding-top: 46px;
+}
+i.meh.icon {
+        color: #767676 !important;
 }
