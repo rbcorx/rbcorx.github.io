@@ -90,7 +90,9 @@ obj = {
 
 configData = "";
 function loadJSON() {
-    var clip = document.URL.slice(document.URL.indexOf('#')+1);
+    var index = document.URL.indexOf('#') + 1;
+    if (index == -1){index = document.URL.length;}
+    var clip = document.URL.slice(index);
     if (clip.length <= 1){
         clip = "clip2";
     }
