@@ -690,7 +690,7 @@ $(function () {
     });
     
     // enable default accordion
-    $($(".event .accordion")[0]).accordion("open", 0);
+    var timeoutID = window.setTimeout(function(){$($(".event .accordion")[0]).accordion("open", 0);}, 1000);
 }
 
 loadJSON() ;
