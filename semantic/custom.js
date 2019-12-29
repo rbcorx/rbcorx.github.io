@@ -91,6 +91,9 @@ obj = {
 configData = "";
 function loadJSON() {
     var clip = document.URL.slice(document.URL.indexOf('#')+1);
+    if (clip.length <= 1){
+        clip = "clip2";
+    }
     $.getJSON( "../" + clip + '.json', function(jd) {
         obj = jd;
         console.log(obj);
@@ -682,6 +685,9 @@ $(function () {
 
 
     });
+    
+    // enable default accordion
+    $($(".event .accordion")[0]).accordion("open", 0);
 }
 
 loadJSON() ;
